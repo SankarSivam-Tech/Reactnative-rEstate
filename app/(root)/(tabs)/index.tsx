@@ -3,11 +3,17 @@ import Filters from "@/components/Filters";
 import Search from "@/components/Search";
 import icons from "@/constants/icons";
 import { useGlobalContext } from "@/lib/global-provider";
-import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
-  const {user}=useGlobalContext()
+  const { user } = useGlobalContext();
   return (
     <SafeAreaView className="bg-white h-full">
       <FlatList
@@ -24,7 +30,7 @@ export default function Index() {
               <View className="flex flex-row items-center">
                 <Image
                   className="size-12 rounded-full"
-                  source={{uri:user?.avatar}}
+                  source={{ uri: user?.avatar }}
                 />
 
                 <View className="flex flex-col items-start ml-2 justify-center">
@@ -33,7 +39,7 @@ export default function Index() {
                   </Text>
 
                   <Text className="text-base font-rubik-medium text-black-300">
-                   {user?.name}
+                    {user?.name}
                   </Text>
                 </View>
               </View>
